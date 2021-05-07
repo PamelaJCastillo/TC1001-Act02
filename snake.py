@@ -61,11 +61,21 @@ def move():
     clear()
 
     for body in snake:
-        square(body.x, body.y, 9, 'black')
+        square(body.x, body.y, 9, bodyColor)
 
-    square(food.x, food.y, 9,'green')
+    square(food.x, food.y, 9,foodColor)
     update()
     ontimer(move, 100)
+
+colorList = ["orange", "green", "purple", "blue", "black"]
+randNum = randrange(0, 4)
+bodyColor = colorList[randNum]
+randNum2 = randrange(0,4)
+foodColor = colorList[randNum2]
+
+while bodyColor == foodColor:
+    randNum2 = randrange(0,4)
+    foodColor = colorList[randNum2]
 
 setup(420, 420, 370, 0)
 hideturtle()
