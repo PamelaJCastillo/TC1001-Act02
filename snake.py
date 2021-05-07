@@ -67,12 +67,17 @@ def move():
     update()
     ontimer(move, 100)
 
+#Se crea una lista con los colores a asignar aleatoriamente.
 colorList = ["orange", "green", "purple", "blue", "black"]
+#Se obtiene un numero random, y se obtiene un color aleatorio de la lista
+#Color de la serpiente
 randNum = randrange(0, 4)
 bodyColor = colorList[randNum]
+#Color de la comida
 randNum2 = randrange(0,4)
 foodColor = colorList[randNum2]
 
+#Un while para que no se repita el color
 while bodyColor == foodColor:
     randNum2 = randrange(0,4)
     foodColor = colorList[randNum2]
